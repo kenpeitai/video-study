@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+
+  #springboot开发坏境
+spring:
+  profiles:
+    active: dev
+
+  #文件上传相关设置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+  #mybatis插件配置
+mybatis-plus:
+  type-aliases-package: com.example.biz.entity     #配置别名
+  mapper-locations: classpath:dao/*.xml       #resources就是classpath里面的内容
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
